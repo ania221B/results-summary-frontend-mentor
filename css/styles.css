@@ -1,0 +1,214 @@
+/* ===================
+    CUSTOM PROPERTIES
+====================== */
+
+:root {
+  --clr-neutral-100: 0 0% 100%;
+  --clr-neutral-600: 224 30% 27%;
+
+  --clr-primary-100: hsl(221, 100%, 96%);
+  --clr-primary-400: hsl(241, 81%, 54%); /* background gradient */
+  --clr-primary-500: 234 85% 45%; /* category color */
+  --clr-primary-600: hsla(241, 72%, 46%, 0); /* circle gradient */
+
+  --clr-secondary-200: hsl(241, 100%, 89%);
+  --clr-secondary-400: hsl(252, 100%, 67%); /* background gradient */
+  --clr-secondary-500: hsla(256, 72%, 46%, 1); /* circle gradient */
+
+  /* other category colors */
+  --clr-accent-1: 0 100% 67%;
+  --clr-accent-2: 39 100% 56%;
+  --clr-accent-3: 166 100% 37%;
+
+  --ff-sans: 'Hanken Grotesk', sans-serif;
+
+  --fs-400: 1.125rem;
+
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-800: 800;
+}
+
+/* ===================
+    RESET
+====================== */
+
+/* Sets box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Removes default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Removes unnecessary space caused by line height */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+/* Removes default list styling on ul, ol elements with a list role */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Sets core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Sets core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-500);
+  color: hsla(var(--clr-neutral-600) / 1);
+
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+}
+
+/* Gives default styling to a elements that don't have a class */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Makes images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Inherits fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Removes all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===================
+    UTILITY CLASSES
+====================== */
+
+.container {
+  width: min(100%, 40rem);
+  margin-inline: auto;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.bg-gradient-full {
+  background-image: linear-gradient(
+    to bottom,
+    var(--clr-secondary-400),
+    var(--clr-primary-400)
+  );
+}
+
+.bg-gradient-faded {
+  background-image: linear-gradient(
+    to bottom,
+    var(--clr-secondary-500),
+    var(--clr-primary-600)
+  );
+}
+
+.bg-accent-1 {
+  background-color: hsla(var(--clr-accent-1) / 0.05);
+}
+
+.bg-accent-2 {
+  background-color: hsla(var(--clr-accent-2) / 0.05);
+}
+
+.bg-accent-3 {
+  background-color: hsla(var(--clr-accent-3) / 0.05);
+}
+
+.bg-primary {
+  background-color: hsla(var(--clr-primary-500) / 0.05);
+}
+
+.bg-neutral-dark {
+  background-color: var(--clr-neutral-600);
+}
+
+.text-white {
+  color: hsla(var(--clr-neutral-100) / 1);
+}
+
+.text-white-faded {
+  color: hsla(var(--clr-neutral-100) / 0.5);
+}
+
+.text-accent-1 {
+  color: hsla(var(--clr-accent-1) / 1);
+}
+
+.text-accent-2 {
+  color: hsla(var(--clr-accent-2) / 1);
+}
+
+.text-accent-3 {
+  color: hsla(var(--clr-accent-3) / 1);
+}
+
+.text-primary {
+  color: hsla(var(--clr-primary-500) / 1);
+}
+
+.text-neutral-faded {
+  color: hsla(var(--clr-neutral-600) / 0.5);
+}
+
+/* ===================
+    UTILITY CLASSES
+====================== */
+
+.card {
+  display: grid;
+  grid-auto-flow: row;
+}
