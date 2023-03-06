@@ -34,39 +34,41 @@
   <main>
     <div class="container">
       <div class="card">
-        <div class="result bg-gradient-full">
-          <h2 class="text-white-faded">Your Result</h2>
-          <div class="score-numeric bg-gradient-faded text-white">
-            <p>76<span class="text-white-faded">of 100</span></p>
+        <div class="card__result">
+          <h2 class="result__title title">Your Result</h2>
+          <div class="result__numeric">
+            <p>76<span>of 100</span></p>
           </div>
-          <div class="score-in-words">Great</div>
-          <p class="text-white-faded">You scored higher than 65% of the people who have taken these tests.</p>
+          <div class="result__descriptive">
+            <p>Great</p>
+            <p>You scored higher than 65% of the people who have taken these tests.</p>
+          </div>
         </div>
-        <div class="summary">
-          <h2>Summary</h2>
-          <ul class="categories" role="list">
-            <li class="bg-accent-1">
+        <div class="card__summary">
+          <h2 class="title">Summary</h2>
+          <ul class="summary__categories flow" role="list">
+            <li>
               <img src="assets/images/icon-reaction.svg" alt="">
-              <p class="category text-accent-1">Reaction</p>
+              <p class="category">Reaction</p>
               <p><span> / 100</span></p>
             </li>
-            <li class="bg-accent-2">
+            <li>
               <img src="assets/images/icon-memory.svg" alt="">
-              <p class="category text-accent-2">Memory</p>
+              <p class="category">Memory</p>
               <p><span> / 100</span></p>
             </li>
-            <li class="bg-accent-3">
+            <li>
               <img src="assets/images/icon-verbal.svg" alt="">
-              <p class="category text-accent-3">Verbal</p>
+              <p class="category">Verbal</p>
               <p><span> / 100</span></p>
             </li>
-            <li class="bg-primary">
+            <li>
               <img src="assets/images/icon-visual.svg" alt="">
-              <p class="category text-primary">Visual</p>
+              <p class="category">Visual</p>
               <p><span> / 100</span></p>
             </li>
           </ul>
-          <button type="button" class="button">Continue</button>
+          <button type="button" class="card__button">Continue</button>
         </div>
       </div>
     </div>
