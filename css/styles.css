@@ -244,21 +244,72 @@ select {
   }
 }
 
-.result__numeric > *:first-child {
+.user-score {
+  display: block;
   font-size: var(--fs-900);
   font-weight: var(--fw-800);
   line-height: 1.3;
 }
-.result__numeric > *:first-child span:where(:not(:first-of-type)) {
+
+[data-value='max'] .user-score {
+  animation-name: changeSize;
+  animation-duration: 700ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes changeSize {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.result__numeric span:where(:nth-of-type(2)) {
   display: block;
   font-size: 1rem;
   font-weight: var(--fw-700);
   color: hsla(var(--clr-neutral-100) / 0.4);
 }
 
+.result__descriptive {
+  opacity: 0;
+  max-width: 30ch;
+  margin-inline: auto;
+}
+
 .result__descriptive > *:first-child {
   font-size: var(--fs-600);
   font-weight: var(--fw-700);
+}
+
+[data-value='max'] .result__descriptive {
+  animation-name: showText;
+  animation-duration: 700ms;
+  animation-delay: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* SUMARY SECTION */
@@ -333,7 +384,7 @@ select {
   font-weight: var(--fw-700);
 }
 
-.category + p > span {
+.category + p > span:last-child {
   color: hsla(var(--clr-neutral-600) / 0.5);
 }
 
