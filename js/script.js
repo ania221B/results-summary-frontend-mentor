@@ -21,8 +21,8 @@ function displayCategoryItems () {
         const id = item.category.toLowerCase()
         listItem.innerHTML = `
       <img src="${item.icon}" alt="">
-      <p id="${id}" class="category">Reaction</p>
-      <p><span class="score" data-max="${item.score}">${item.score}</span><span> / 100</span></p>
+      <h3 id="${id}" class="category">${item.category}</h3>
+      <p><span class="score" data-max="${item.score}">${item.score}</span> / 100</p>
       `
         fragment.appendChild(listItem)
       })
@@ -37,9 +37,6 @@ function displayCategoryItems () {
         const max = result.getAttribute('data-max')
 
         increaseNumber(0, max, result)
-
-        console.log(max)
-        console.log(result)
       })
     })
 }
