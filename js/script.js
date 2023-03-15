@@ -8,6 +8,10 @@ const scoreValue = parseInt(score.getAttribute('data-max'))
 /* =============
   FUNCTIONS
 =============== */
+
+/**
+ * Fetches data form .json file and uses them to display category list
+ */
 function displayCategoryItems () {
   const url = 'js/data.json'
   fetch(url)
@@ -41,23 +45,39 @@ function displayCategoryItems () {
     })
 }
 
+/**
+ * Sets 'data-value' attribute to 'max' (to indicate the animation ended)
+ * @param {HTMLElement} element HTML element for which the attribute is to be set
+ */
 function setAttribute (element) {
   element.setAttribute('data-value', 'max')
 }
 
-function animateNumber (tempValue, maxValue, element) {
-  if (tempValue <= maxValue) {
-    element.textContent = tempValue
+/**
+ * Increases the number until max value is reached, which triggers animation through setting an attribute
+ * @param {Number} currentValue Initial value displayed as content of the HTML element
+ * @param {Number} maxValue Maximum value to be displayed as content of the HTML element, retrieved from .json file
+ * @param {HTMLElement} element HTML element for which the number (its content) is to be increased
+ */
+function animateNumber (currentValue, maxValue, element) {
+  if (currentValue <= maxValue) {
+    element.textContent = currentValue
     setTimeout(_ => {
-      animateNumber(tempValue + 1, maxValue, element)
+      animateNumber(currentValue + 1, maxValue, element)
     }, 20)
   }
 
-  if (tempValue === maxValue) {
+  if (currentValue === maxValue) {
     setAttribute(card)
   }
 }
 
+/**
+ * Increases the number until max value is reached
+ * @param {Number} currentValue Initial value displayed as content of the HTML element
+ * @param {Number} maxValue Maximum value to be displayed as content of the HTML element, retrieved from .json file
+ * @param {HTMLElement} element HTML element for which the number (its content) is to be increased
+ */
 function increaseNumber (currentValue, maxValue, element) {
   if (currentValue <= maxValue) {
     element.textContent = currentValue
