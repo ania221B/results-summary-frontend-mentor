@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Mobile View](./screenshots/Frontend-Mentor-Results-summary-component-Mobile.png.jpg)
+![Mobile View](./screenshots/Frontend-Mentor-Results-summary-component-Mobile.png)
 ![Desktop View](./screenshots/Frontend-Mentor-Results-summary-component-Desktop.png)
 
 ### Links
