@@ -421,6 +421,49 @@ select {
   transition: opacity 350ms ease-in-out;
 }
 
-.card__button:hover::before {
+.card__button:focus {
+  outline: none;
+  outline: 0.125rem solid transparent;
+}
+
+.card__button:hover::before,
+.card__button:focus-visible::before {
   opacity: 1;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-block: 1em;
+}
+
+.attribution a {
+  display: inline-block;
+  font-weight: var(--fw-700);
+  color: var(--clr-secondary-400);
+  text-decoration: none;
+
+  position: relative;
+}
+
+.attribution a::after {
+  content: '';
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--clr-secondary-400);
+  transform: scaleX(0);
+  transition: transform 300ms ease-out;
+  transform-origin: left;
+}
+
+.attribution a:focus {
+  outline: none;
+  outline: 0.125rem solid transparent;
+}
+
+.attribution a:hover::after,
+.attribution a:focus-visible::after {
+  transform: scaleX(1);
 }
